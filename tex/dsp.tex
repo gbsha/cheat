@@ -1,0 +1,32 @@
+\documentclass[a4paper]{IEEEtran}
+
+\input{preamble}
+
+\DeclareMathOperator{\rect}{rect}
+\DeclareMathOperator{\sinc}{sinc}
+
+\begin{document}
+\section{Functions}
+\begin{align}
+\rect(t)=\true\left(|t|<\frac{1}{2}\right)\\\
+\sinc(t)=\frac{\sin(t)}{t}
+\end{align}
+\section{Fourier Transform}
+\begin{align}
+&&X(f)=\int_{-\infty}^\infty x(t)e^{-2\pi j ft}\de t\\
+\sinc\left(\frac{t}{T_s}\right)&&\frac{1}{F_s}\rect\left(\frac{f}{F_s}\right)
+\end{align}
+\section{Sampling of Bandlimited Function}
+\begin{align}
+x[n] &= \left<\sinc\left(\frac{t-nT_s}{T_s}\right), x(\cdot)\right>=T_s x(nT_s)\\
+x(t) &= \frac{1}{T_s}\sum_{n=-\infty}^\infty x[n]\sinc\left(\frac{t-nT_s}{T_s}\right)
+\end{align}
+\section{Lagrange Polynomials}
+\begin{align}
+L_n^{(N)}(t)=\prod_{k=-N, k\neq n}^N \frac{t-k}{k-n},\quad n=-N,\dotsc, N
+\end{align}
+Property:
+\begin{align*}
+L_n^{(N)}=\begin{cases}1& t=n\\0 & t\in \setint\setminus n\end{cases}
+\end{align*}
+\end{document}
