@@ -9,17 +9,49 @@
 \section{Functions}
 \begin{align}
 \rect(t)=\true\left(|t|<\frac{1}{2}\right)\\\
-\sinc(t)=\frac{\sin(t)}{t}
+\sinc(t)=\frac{\sin(\pi t)}{\pi t}\\
+\end{align}
+\section{Identities}
+\begin{align}
+\cos(x)=\frac{e^{jx}+e^{-jx}}{2}\\
+\sin(x)=\frac{e^{jx}-e^{-jx}}{2j}\\
+\cos(a)\sin(b)=\frac{1}{2}\left[\sin(a+b)-\sin(a-b)\right]\\
+\cos(a)\cos(b)=\frac{1}{2}\left[\cos(a+b)+\cos(a-b)\right]\\
+\sin(a)\sin(b)=\frac{1}{2}\left[\cos(a-b)-\cos(a+b)\right]\\
 \end{align}
 \section{Fourier Transform}
 \begin{align}
-&&X(f)=\int_{-\infty}^\infty x(t)e^{-2\pi j ft}\de t\\
-\sinc\left(\frac{t}{T_s}\right)&&\frac{1}{F_s}\rect\left(\frac{f}{F_s}\right)
+x(t)&&&\int_{-\infty}^\infty x(t)e^{-2\pi j ft}\de t\\
+\sinc\left(\frac{t}{T_s}\right)&&&\frac{1}{F_s}\rect\left(\frac{f}{F_s}\right)\\
+\rect\left(\frac{t}{T_s}\right)&&&\frac{1}{F_s}\sinc\left(\frac{f}{F_s}\right)\\
+x(\alpha t)&&&\frac{1}{\alpha}X\left(\frac{f}{\alpha}\right)\\
+\cos(2\pi f_0t)&&&\frac{1}{2}\left[\delta(f+f_0)+\delta(f-f_0)\right]\\
+\sin(2\pi f_0t)&&&\frac{j}{2}\left[\delta(f+f_0)-\delta(f-f_0)\right]
 \end{align}
+\section{$z$-Transform}
+\subsection{Upsampling/Downsampling}
+\begin{align}
+x\left[\left\lfloor\frac{n}{N}\right\rfloor\right]&&&X(z^N)\\
+x\left[nN\right]&&&\sum_{m=0}^{N-1}\frac{1}{N}X(z^{\frac{1}{N}}e^{j2\pi\frac{m}{N}})
+\end{align}
+\section{DTFT}
+
+\begin{align}
+&\cos(w_0n+\phi)\\\nonumber
+&\qquad\frac{1}{2}\left[e^{j\phi}\delta(w-w_0)+e^{-j\phi}\delta(w+w_0)\right]\\
+&\sin(w_0n+\phi)\nonumber\\
+&\qquad\frac{-j}{2}\left[e^{j\phi}\delta(w-w_0)-e^{-j\phi}\delta(w+w_0)\right]\\
+\end{align}
+
 \section{Sampling of Bandlimited Function}
 \begin{align}
 x[n] &= \left<\sinc\left(\frac{t-nT_s}{T_s}\right), x(\cdot)\right>=T_s x(nT_s)\\
 x(t) &= \frac{1}{T_s}\sum_{n=-\infty}^\infty x[n]\sinc\left(\frac{t-nT_s}{T_s}\right)
+\end{align}
+\subsection{Bandpass Sampling}
+Signal support $|f|\in[f_0,f_1]$. Minimum sampling frequency
+\begin{align}
+F_s\geq 2\frac{f_1}{\lfloor\frac{f_1}{f_1-f_0}\rfloor}
 \end{align}
 \section{Lagrange Polynomials}
 \begin{align}
