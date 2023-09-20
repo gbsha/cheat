@@ -6,8 +6,15 @@
     c           copy
     m           Move selected object
     w           Draw wire
-    shift+F     flip
-    shift+R     rotate
+    u           undo
+    shift+F     flip selected object
+    shift+R     rotate selected object
+
+## Navigating hierarchies
+
+    e           descend to schematic
+    i           descend to symbol
+    ctrl+e      back to parent schematic 
 
 ## Graph related key strokes
 
