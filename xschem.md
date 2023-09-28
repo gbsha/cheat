@@ -9,12 +9,18 @@
     u           undo
     shift+F     flip selected object
     shift+R     rotate selected object
+    ctrl+select stretch-editing mode: 
+                move objects preserving their connections.
 
 ## Navigating hierarchies
 
     e           descend to schematic
     i           descend to symbol
     ctrl+e      back to parent schematic 
+
+## Symbols
+
+    shift+s     edit pin order by specifying the index of the selected pin. First pin has index 0.
 
 ## Graph related key strokes
 
